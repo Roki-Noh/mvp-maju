@@ -1,0 +1,10 @@
+export { Header } from './Header';
+export { HeroSection } from './HeroSection';
+export { FeaturesSection } from './FeaturesSection';
+export { HowItWorksSection } from './HowItWorksSection';
+export { SecuritySection } from './SecuritySection';
+export { FAQSection } from './FAQSection';
+export { CreatorSection } from './CreatorSection';
+export { CTASection } from './CTASection';
+export { Footer } from './Footer';
+export { PhoneMockup } from './PhoneMockup';

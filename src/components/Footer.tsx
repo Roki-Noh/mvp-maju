@@ -1,7 +1,6 @@
 'use client';
 
-import { ActionIcon, Anchor, Box, Container, Divider, Group, Image, Stack, Text, Title } from '@mantine/core';
-import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-react';
+import { Anchor, Box, Container, Divider, Group, Stack, Text, Title } from '@mantine/core';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -19,17 +18,6 @@ export function Footer() {
                 프리미엄 1:1 라이브톡 플랫폼 MAJU에서<br />
                 특별한 순간을 경험해보세요.
               </Text>
-              <Group gap="sm">
-                <ActionIcon variant="subtle" color="gray" size="lg" radius="xl">
-                  <IconBrandInstagram size={20} />
-                </ActionIcon>
-                <ActionIcon variant="subtle" color="gray" size="lg" radius="xl">
-                  <IconBrandTwitter size={20} />
-                </ActionIcon>
-                <ActionIcon variant="subtle" color="gray" size="lg" radius="xl">
-                  <IconBrandYoutube size={20} />
-                </ActionIcon>
-              </Group>
             </Stack>
 
             {/* Links Columns */}
@@ -38,7 +26,7 @@ export function Footer() {
                 <Text size="sm" fw={700} c="white">서비스</Text>
                 <Stack gap="xs">
                   <Anchor href="#" size="sm" c="gray.5" underline="hover">브랜드 소개</Anchor>
-                  <Anchor href="#" size="sm" c="gray.5" underline="hover">호스트 지원</Anchor>
+                  <Anchor href="#" size="sm" c="gray.5" underline="hover">크리에이터 지원</Anchor>
                   <Anchor href="#" size="sm" c="gray.5" underline="hover">제휴 문의</Anchor>
                 </Stack>
               </Stack>
@@ -48,7 +36,7 @@ export function Footer() {
                 <Stack gap="xs">
                   <Anchor href="#" size="sm" c="gray.5" underline="hover">공지사항</Anchor>
                   <Anchor href="#" size="sm" c="gray.5" underline="hover">자주 묻는 질문</Anchor>
-                  <Anchor href="mailto:support@maju.app" size="sm" c="gray.5" underline="hover">1:1 문의하기</Anchor>
+                  <Anchor href="mailto:majuboda.app@gmail.com" size="sm" c="gray.5" underline="hover">1:1 문의하기</Anchor>
                 </Stack>
               </Stack>
 
@@ -65,15 +53,25 @@ export function Footer() {
 
           <Divider color="white" opacity={0.1} />
 
-          <Group justify="space-between" align="center" wrap="wrap" gap="md">
+          {/* Company Info */}
+          <Stack gap="xs">
             <Text size="xs" c="gray.6">
-              &copy; {currentYear} MAJU Inc. All rights reserved.
+              주식회사 비잇 | 대표 방대진
             </Text>
-            <Group gap="xl">
-              <Text size="xs" c="gray.7">사업자등록번호: 123-45-67890</Text>
-              <Text size="xs" c="gray.7">통신판매업신고: 2024-서울강남-00000</Text>
-            </Group>
-          </Group>
+            <Text size="xs" c="gray.6">
+              경기도 남양주시 와부읍 수레로116번길 16, 4층 402-J351호
+            </Text>
+            <Text size="xs" c="gray.6">
+              사업자등록번호: 451-86-03650 | 통신판매업신고: 제 2025-와부조안-0377호
+            </Text>
+            <Text size="xs" c="gray.6">
+              고객센터: majuboda.app@gmail.com
+            </Text>
+          </Stack>
+
+          <Text size="xs" c="gray.7">
+            &copy; {currentYear} MAJU. All rights reserved.
+          </Text>
         </Stack>
       </Container>
     </Box>

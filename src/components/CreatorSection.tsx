@@ -164,7 +164,77 @@ export function CreatorSection() {
       }}
     >
       <Container size="lg">
-        <Group justify="space-between" align="center" gap={60}>
+        {/* Mobile Layout */}
+        <Stack gap={40} align="center" hiddenFrom="md">
+          <RevenueVisual />
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Stack gap="xl" align="center">
+              <Stack gap="md" align="center">
+                <Text
+                  c="#FF6B8A"
+                  fw={700}
+                  size="sm"
+                  style={{ letterSpacing: 2 }}
+                >
+                  FOR CREATORS
+                </Text>
+                <Title
+                  order={2}
+                  fz={28}
+                  fw={800}
+                  ta="center"
+                  style={{ lineHeight: 1.3 }}
+                >
+                  즐거운 팬 소통만으로
+                  <br />
+                  <Text span inherit c="#FF6B8A">
+                    자연스러운 수익
+                  </Text>
+                  을 만들어보세요
+                </Title>
+              </Stack>
+
+              <Stack gap="sm">
+                <Group gap="xs" align="flex-start" justify="center">
+                  <Text>🔥</Text>
+                  <Text size="sm" c="gray.7" ta="center" style={{ lineHeight: 1.6, flex: 1 }}>
+                    MAJU는 합리적인 요금 정책으로 팬들에게 절대 부담을 주지 않아요.
+                  </Text>
+                </Group>
+                <Group gap="xs" align="flex-start" justify="center">
+                  <Text>🔥</Text>
+                  <Text size="sm" c="gray.7" ta="center" style={{ lineHeight: 1.6, flex: 1 }}>
+                    팬들과 1:1 영상통화로 특별한 시간을 공유하고, 진정한 소통을 경험하세요.
+                  </Text>
+                </Group>
+                <Group gap="xs" align="flex-start" justify="center">
+                  <Text>🔥</Text>
+                  <Text size="sm" c="gray.7" ta="center" style={{ lineHeight: 1.6, flex: 1 }}>
+                    팬들과 즐겁게 소통하는 것만으로도 매월 안정적인 수익을 가져갈 수 있어요.
+                  </Text>
+                </Group>
+              </Stack>
+
+              <Text size="md" fw={600} c="dark.9" ta="center">
+                크리에이터, 셀럽이라면 지금 바로 이용할 수 있어요.
+              </Text>
+
+              <Group gap="md" justify="center">
+                <PlayStoreBadge />
+                <AppStoreBadge />
+              </Group>
+            </Stack>
+          </motion.div>
+        </Stack>
+
+        {/* Desktop Layout */}
+        <Group justify="space-between" align="center" gap={60} visibleFrom="md">
           {/* Text Side */}
           <Box style={{ flex: 1, maxWidth: 520 }}>
             <motion.div
@@ -234,10 +304,7 @@ export function CreatorSection() {
           </Box>
 
           {/* Visual Side */}
-          <Box
-            style={{ flex: 1, display: 'flex', justifyContent: 'center' }}
-            visibleFrom="md"
-          >
+          <Box style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
             <RevenueVisual />
           </Box>
         </Group>

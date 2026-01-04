@@ -108,32 +108,104 @@ export function FeaturesSection() {
           {features.map((feature, index) => {
             const isEven = index % 2 === 0;
             return (
-              <Group
+              <Stack
                 key={index}
-                justify="space-between"
+                gap={40}
                 align="center"
-                gap={60}
-                style={{
-                  flexDirection: isEven ? 'row' : 'row-reverse',
-                }}
               >
-                {/* Text Side */}
-                <Box style={{ flex: 1, maxWidth: 500 }}>
+                {/* Visual Side - always on top for mobile */}
+                <Box style={{ width: '100%', maxWidth: 400 }} hiddenFrom="md">
                   <motion.div
-                    initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                   >
-                    <Stack gap="md">
-                      <Group gap="xs">
+                    <feature.visual />
+                  </motion.div>
+                </Box>
+
+                <Group
+                  justify="space-between"
+                  align="center"
+                  gap={60}
+                  style={{
+                    flexDirection: isEven ? 'row' : 'row-reverse',
+                    width: '100%',
+                  }}
+                  visibleFrom="md"
+                >
+                  {/* Text Side - Desktop */}
+                  <Box style={{ flex: 1, maxWidth: 500 }}>
+                    <motion.div
+                      initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <Stack gap="md">
+                        <Group gap="xs">
+                          {feature.tags.map(tag => (
+                            <Badge key={tag} variant="dot" color="gray" size="sm">{tag}</Badge>
+                          ))}
+                        </Group>
+                        <Title
+                          order={2}
+                          size={36}
+                          style={{
+                            lineHeight: 1.3,
+                            whiteSpace: 'pre-line'
+                          }}
+                        >
+                          {feature.title}
+                        </Title>
+                        <Text size="lg" c="gray.6" style={{ lineHeight: 1.7 }}>
+                          {feature.description}
+                        </Text>
+                        <ThemeIcon
+                          radius="xl"
+                          size={40}
+                          variant="light"
+                          color="violet"
+                          mt="md"
+                        >
+                          <IconCheck size={20} />
+                        </ThemeIcon>
+                      </Stack>
+                    </motion.div>
+                  </Box>
+
+                  {/* Visual Side - Desktop */}
+                  <Box style={{ flex: 1, minWidth: 300 }}>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                      <feature.visual />
+                    </motion.div>
+                  </Box>
+                </Group>
+
+                {/* Text Side - Mobile */}
+                <Box style={{ width: '100%' }} hiddenFrom="md">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <Stack gap="md" align="center">
+                      <Group gap="xs" justify="center">
                         {feature.tags.map(tag => (
                           <Badge key={tag} variant="dot" color="gray" size="sm">{tag}</Badge>
                         ))}
                       </Group>
                       <Title
                         order={2}
-                        size={36}
+                        size={28}
+                        ta="center"
                         style={{
                           lineHeight: 1.3,
                           whiteSpace: 'pre-line'
@@ -141,7 +213,7 @@ export function FeaturesSection() {
                       >
                         {feature.title}
                       </Title>
-                      <Text size="lg" c="gray.6" style={{ lineHeight: 1.7 }}>
+                      <Text size="md" c="gray.6" ta="center" style={{ lineHeight: 1.7 }}>
                         {feature.description}
                       </Text>
                       <ThemeIcon
@@ -156,19 +228,7 @@ export function FeaturesSection() {
                     </Stack>
                   </motion.div>
                 </Box>
-
-                {/* Visual Side */}
-                <Box style={{ flex: 1, minWidth: 300 }}>
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                  >
-                    <feature.visual />
-                  </motion.div>
-                </Box>
-              </Group>
+              </Stack>
             );
           })}
         </Stack>

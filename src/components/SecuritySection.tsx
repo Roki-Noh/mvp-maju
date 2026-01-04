@@ -56,7 +56,53 @@ export function SecuritySection() {
             }}
         >
             <Container size="lg">
-                <Group justify="center" gap={80} align="center" style={{ flexDirection: 'row-reverse' }}>
+                {/* Mobile Layout */}
+                <Stack gap={40} align="center" hiddenFrom="md">
+                    {/* Visual Side - Mobile */}
+                    <motion.div
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <SecurityVisual />
+                    </motion.div>
+
+                    {/* Text Side - Mobile */}
+                    <Stack gap="xl" align="center">
+                        <Stack gap="xs" align="center">
+                            <Text c="blue" fw={700} style={{ letterSpacing: 1.5 }}>SECURITY FIRST</Text>
+                            <Title order={2} size={28} ta="center" style={{ lineHeight: 1.2, color: '#1a1a2e' }}>
+                                철저한 기술적 보안으로 <br />
+                                지켜지는 <Text span c="blue">프라이버시</Text>
+                            </Title>
+                        </Stack>
+
+                        <Text size="md" c="gray.7" ta="center" style={{ lineHeight: 1.6 }}>
+                            MAJU는 회원님의 안전을 최우선으로 생각합니다. <br />
+                            독자적인 캡쳐 방지 기술과 종단간 암호화로 <br />
+                            걱정 없이 오직 대화에만 집중하세요.
+                        </Text>
+
+                        <List
+                            spacing="md"
+                            size="md"
+                            center
+                            icon={
+                                <ThemeIcon color="blue" size={24} radius="xl">
+                                    <IconCheck size={14} />
+                                </ThemeIcon>
+                            }
+                        >
+                            <List.Item>화면 캡쳐 및 녹화 원천 차단</List.Item>
+                            <List.Item>개인 정보가 남지 않는 안심 번호</List.Item>
+                            <List.Item>대화 내용 서버 자동 삭제 (휘발성)</List.Item>
+                        </List>
+                    </Stack>
+                </Stack>
+
+                {/* Desktop Layout */}
+                <Group justify="center" gap={80} align="center" style={{ flexDirection: 'row-reverse' }} visibleFrom="md">
                     {/* Visual Side */}
                     <Box style={{ flex: 1, minWidth: 320, display: 'flex', justifyContent: 'center' }}>
                         <motion.div

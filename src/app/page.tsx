@@ -1,5 +1,4 @@
 import {
-  CreatorSection,
   CTASection,
   FAQSection,
   FeaturesSection,
@@ -19,7 +18,6 @@ export default function Home() {
       <FeaturesSection />
       <HowItWorksSection />
       <FAQSection />
-      <CreatorSection />
       <CTASection />
       <Footer />
     </main>

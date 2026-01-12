@@ -44,7 +44,7 @@ export function Footer() {
                 <Text size="sm" fw={700} c="white">정책</Text>
                 <Stack gap="xs">
                   <Anchor href="#" size="sm" c="gray.5" underline="hover">이용약관</Anchor>
-                  <Anchor href="#" size="sm" c="gray.5" fw={700} underline="hover">개인정보처리방침</Anchor>
+                  <Anchor href="/privacy" size="sm" c="gray.5" fw={700} underline="hover">개인정보처리방침</Anchor>
                   <Anchor href="#" size="sm" c="gray.5" underline="hover">운영정책</Anchor>
                 </Stack>
               </Stack>

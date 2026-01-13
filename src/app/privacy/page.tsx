@@ -256,6 +256,46 @@ export default function PrivacyPage() {
                   본 개인정보처리방침은 2026년 01월 03일부터 적용됩니다.
                 </Text>
               </Stack>
+
+              <Divider color="white" opacity={0.1} />
+
+              {/* 앱 권한 안내 */}
+              <Stack gap="md">
+                <Title order={2} c="white" size="xl">
+                  앱 권한 안내
+                </Title>
+
+                <Stack gap="lg" mt="md">
+                  <Stack gap="xs">
+                    <Title order={4} c="white" size="md">
+                      카메라 권한
+                    </Title>
+                    <Text c="gray.4" style={{ lineHeight: 1.8 }}>
+                      MAJU는 1:1 실시간 영상통화 서비스를 제공하기 위해 카메라 권한이 필요합니다.
+                      통화 중 백그라운드에서도 영상 스트림을 유지하여 끊김 없는 통화 경험을 제공합니다.
+                    </Text>
+                  </Stack>
+
+                  <Stack gap="xs">
+                    <Title order={4} c="white" size="md">
+                      마이크 권한
+                    </Title>
+                    <Text c="gray.4" style={{ lineHeight: 1.8 }}>
+                      음성 및 영상통화 시 마이크 권한을 사용합니다.
+                      앱이 백그라운드 상태에서도 오디오 통화를 계속할 수 있도록 합니다.
+                    </Text>
+                  </Stack>
+
+                  <Stack gap="xs">
+                    <Title order={4} c="white" size="md">
+                      통화 권한
+                    </Title>
+                    <Text c="gray.4" style={{ lineHeight: 1.8 }}>
+                      VoIP 기반 실시간 통화 연결을 유지하기 위해 사용됩니다.
+                    </Text>
+                  </Stack>
+                </Stack>
+              </Stack>
             </Stack>
           </Box>
         </Stack>
